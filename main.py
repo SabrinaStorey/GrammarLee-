@@ -1,6 +1,8 @@
+#made by Adam Wester and Sabrina Storey for MakeUC 2021
+
 import discord
 from spellchecker import SpellChecker
-TOKEN = 'ODk2NDM0NDY1MDAwMjg4MjY2.YWHDpw.dOSms-I4eReSloUOeFRHVz9qmEE'
+TOKEN = 'ODk2NDM0NDY1MDAwMjg4MjY2.YWHDpw.H8Ml3cpKN_kxyhQ5MLbziTHkX0E'
 client = discord.Client()
 spell = SpellChecker()
 
@@ -28,10 +30,8 @@ async def on_message(message):
             print(badspelling)
             for word in badspelling:
                 wordlist.append(spell.correction(word) + " ")
-
             response = f"Hey {username}, Your message was: {message.content} This is what I corrected for you: "
             response += "".join(map(str, wordlist))
-            # response += "  "
             error = True
             wordlist = []
         #For each word in the user input, the misspell will be added to a list, and the bot will tell the
